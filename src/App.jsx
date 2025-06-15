@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { AddProductScan } from "./components/AddProductScan";
-import { ProductScan } from "./components/ProductScan";
+import { ProductScanGS1Parser } from "./components/ProductScanGS1Parser";
 
 export const App = () => {
   const [listadoProductos, setListadoProductos] = useState([]);
@@ -22,12 +22,13 @@ export const App = () => {
   return (
     <>
       <hr />
+
       <AddProductScan
         onNuevoPorductoEscaneado={onNuevoPorductoEscaneado}
       />
 
       {listadoProductos.map((escaneoProducto, index) => (
-        <ProductScan key={index + 1} escaneoProducto={escaneoProducto} />
+        <ProductScanGS1Parser key={index + 1} escaneoProducto={escaneoProducto} />
       ))}
     </>
   )

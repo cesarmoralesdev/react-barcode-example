@@ -1,4 +1,4 @@
-export const ProductScan = ({ escaneoProducto }) => {
+export const ProductScanGS1Parser = ({ escaneoProducto }) => {
     const { escaneo, GTIN, exp, lot, formatedCode, error } = escaneoProducto;
     return (
         <div>
