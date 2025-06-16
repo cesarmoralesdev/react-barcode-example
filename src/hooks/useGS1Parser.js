@@ -1,8 +1,9 @@
-import gs1Barcode from "gs1-parser";
+// import gs1Barcode from "gs1-parser";
+import { decode } from "gs1-parser";
 import { getDate } from "../util/utilDate";
 export const useGS1Parser = ({ escaneo }) => {
     try {
-        let { GTIN, exp, lot, formatedCode } = gs1Barcode.decode(escaneo);
+        let { GTIN, exp, lot, formatedCode } = decode(escaneo);
         exp = exp ? getDate(exp) : "";
         return {
             escaneo,
